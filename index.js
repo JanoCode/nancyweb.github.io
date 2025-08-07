@@ -1,0 +1,62 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const paragraphs = document.querySelectorAll('.flow-container p');
+
+  paragraphs.forEach(p => {
+    p.style.cursor = 'pointer';
+
+    p.addEventListener('click', () => {
+      const textToCopy = p.innerText.trim();
+      if (!textToCopy) return;
+
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          showCopyMessage(p);
+        })
+        .catch(err => {
+          console.error('Error copiando al portapapeles:', err);
+        });
+    });
+  });
+
+  function showCopyMessage(element) {
+    // Crear el div del mensaje
+    const msg = document.createElement('div');
+    msg.textContent = 'Texto copiado';
+    msg.style.position = 'absolute';
+    msg.style.backgroundColor = '#4BB543';
+    msg.style.color = 'white';
+    msg.style.padding = '5px 10px';
+    msg.style.borderRadius = '5px';
+    msg.style.fontSize = '0.9rem';
+    msg.style.fontWeight = 'bold';
+    msg.style.pointerEvents = 'none';
+    msg.style.zIndex = '1000';
+    msg.style.opacity = '0';
+    msg.style.transition = 'opacity 0.3s ease';
+
+    // Añadir al body
+    document.body.appendChild(msg);
+
+    // Obtener posición del párrafo para mostrar el mensaje justo arriba
+    const rect = element.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    // Posicionar el mensaje centrado horizontalmente sobre el párrafo, un poco arriba
+    msg.style.top = (rect.top + scrollTop - msg.offsetHeight - 10) + 'px';
+    msg.style.left = (rect.left + scrollLeft + rect.width / 2 - msg.offsetWidth / 2) + 'px';
+
+    // Forzar el repaint para activar la transición
+    requestAnimationFrame(() => {
+      msg.style.opacity = '1';
+    });
+
+    // Luego de 1.2 segundos, desaparecer el mensaje y eliminarlo
+    setTimeout(() => {
+      msg.style.opacity = '0';
+      msg.addEventListener('transitionend', () => {
+        msg.remove();
+      });
+    }, 1200);
+  }
+});

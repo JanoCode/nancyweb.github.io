@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e6f0fb;
+  color: #000000;
+  padding: 30px 15px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #0a3d91;
+  text-align: center;
+  text-shadow:
+    0 0 5px #81b8f8,
+    0 0 10px #3498db;
+}
+
+.flow-container {
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content: center;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Columnas */
+.flow-column {
+  background: linear-gradient(145deg, #ffffff, #dbe9ff);
+  border-radius: 16px;
+  box-shadow:
+    3px 3px 12px rgba(10, 61, 145, 0.2),
+    -3px -3px 16px rgba(255, 255, 255, 0.8);
+  padding: 20px 15px;
+  flex: 0 0 23%; 
+  max-width: 23%;
+  min-width: 220px;
+  transition: transform 0.3s ease;
+}
+
+.flow-column:hover {
+  transform: translateY(-4px);
+}
+
+.flow-column h2 {
+  color: #0a3d91;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+  text-align: center;
+  text-shadow: 0 0 4px #81b8f8;
+}
+
+.flow-column h3 {
+  color: #0a3d91;
+  font-size: 1rem;
+  margin: 15px 0 10px;
+}
+
+/* tarjetas */
+.flow-container p {
+  background-color: #b3d4fc;
+  color: #000000;
+  padding: 12px 14px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 10px rgba(10, 61, 145, 0.2);
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.flow-container p:hover {
+  background-color: #81b8f8;
+  box-shadow: 3px 6px 14px rgba(10, 61, 145, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .flow-column {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .flow-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flow-column {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Panda */
+.sleep {
+    display: inline-block;
+    width: 10vmin;
+    height: 10vmin;
+    margin-left: 1vmin;
+    background: url(https://media1.tenor.com/images/0546caeb51e42b4227d0f91a8b6d3e4f/tenor.gif?itemid=11572819) no-repeat center center;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+@keyframes try{
+    0%{
+        content: "s";
+    }
+    5%{
+        content: "sl";
+    }
+    10%{
+        content: "sle";
+    }
+    15%{
+        content: "slee";
+    }
+    20%{
+        content: "sleep";
+    }
+    25%{
+        content: "sleepi";
+    }
+    30%{
+        content: "sleepin";
+    }
+    35%{
+        content: "sleeping";
+    }
+    45%{
+        content: "sleeping.";
+    }
+    60%{
+        content: "sleeping...";
+    }
+    100%{
+        content: "sleeping......";
+    }
+}
