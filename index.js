@@ -1,32 +1,44 @@
-//cambio de GIF por click
 document.addEventListener('DOMContentLoaded', () => {
-  const panda = document.querySelector('.panda');
+  // ===== Mostrar mensaje al entrar =====
+    const msg = document.createElement('div');
+    msg.className = 'panda-message';
+    msg.textContent = 'Mi chanchi... presiona el panda🐼';
+    document.body.appendChild(msg);
 
-  // Lista de GIFs 
-  const gifs = [
-    'img/panda1.gif', 
-    'img/panda2.gif', 
-    'img/panda3.gif',
-    'img/panda4.gif',
-    'img/panda5.gif',
-    'img/panda6.gif',
-    'img/panda7.gif',  
-  ];
+    // Ocultar mensaje después de 4 segundos
+    setTimeout(() => {
+      msg.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+      msg.style.transform = 'translateY(-100%)';
+      msg.style.opacity = '0';
+      setTimeout(() => msg.remove(), 500);
+    }, 10000);
 
-  let indiceInicial = 0;
+    // ===== Lógica del panda =====
+    const panda = document.querySelector('.panda');
 
-  // Mostrar el primer GIF al cargar
-  panda.style.backgroundImage = `url('${gifs[indiceInicial]}')`;
+    // Lista de GIFs guardados en la carpeta img/
+    const gifs = [
+      'img/panda1.gif',
+      'img/panda2.gif',
+      'img/panda3.gif',
+      'img/panda4.gif',
+      'img/panda5.gif',
+      'img/panda6.gif',
+      'img/panda7.gif'
+    ];
 
-  // Evento de clic para cambiar GIF
-  panda.addEventListener('click', () => {
-    indiceInicial = (indiceInicial + 1) % gifs.length;
+    let indiceInicial = 0;
+
+    // Mostrar el primer GIF
     panda.style.backgroundImage = `url('${gifs[indiceInicial]}')`;
-  });
-});
 
-// ------------------------------
-document.addEventListener('DOMContentLoaded', () => {
+    // Cambiar GIF al hacer clic
+    panda.addEventListener('click', () => {
+      indiceInicial = (indiceInicial + 1) % gifs.length;
+      panda.style.backgroundImage = `url('${gifs[indiceInicial]}')`;
+    });
+  
+    // Funcion para copiar texto
   const paragraphs = document.querySelectorAll('.flow-container p');
 
   paragraphs.forEach(p => {
