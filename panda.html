@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda motivacional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .burbuja-texto {
+      position: relative;
+      background: white;
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      max-width: 220px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .burbuja-texto::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 30px;
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: white transparent transparent transparent;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-blue-200">
+
+  <div class="flex flex-col items-center">
+    <!-- burbuja de texto -->
+    <div id="burbuja" class="burbuja-texto mb-4">
+      Presioname.. digo.. me gusta el bamboo 🐼
+    </div>
+
+    <!-- Panda -->
+    <img 
+      id="panda" 
+      src="./img/motivationalPanda.png" 
+      alt="recarga la pagina, no se por que no carga el panda xd"
+      class="w-48 h-48 cursor-pointer transition-transform hover:scale-110"
+    >
+  </div>
+
+  <script>
+    const messages = [
+      "Te amo mi chanchi 🐼",
+      "Estoy muy orgulloso de ti, no importa cuando leas esto! ❤️",
+      "Respondeme wsp desgraciada! 🥵🩵",
+      "Siempre estaré contigo.. tampoco importa cuando leas esto! 💕",
+      "Te mando un beso en el poto :)"
+    ];
+
+    let index = 0;
+    const burbuja = document.getElementById("burbuja");
+    const panda = document.getElementById("panda");
+
+    panda.addEventListener("click", () => {
+      index = (index + 1) % messages.length;
+      burbuja.textContent = messages[index];
+    });
+  </script>
+
+</body>
+</html>
