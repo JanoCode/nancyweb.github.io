@@ -1,3 +1,31 @@
+//cambio de GIF por click
+document.addEventListener('DOMContentLoaded', () => {
+  const panda = document.querySelector('.panda');
+
+  // Lista de GIFs 
+  const gifs = [
+    'img/panda1.gif', 
+    'img/panda2.gif', 
+    'img/panda3.gif',
+    'img/panda4.gif',
+    'img/panda5.gif',
+    'img/panda6.gif',
+    'img/panda7.gif',  
+  ];
+
+  let indiceInicial = 0;
+
+  // Mostrar el primer GIF al cargar
+  panda.style.backgroundImage = `url('${gifs[indiceInicial]}')`;
+
+  // Evento de clic para cambiar GIF
+  panda.addEventListener('click', () => {
+    indiceInicial = (indiceInicial + 1) % gifs.length;
+    panda.style.backgroundImage = `url('${gifs[indiceInicial]}')`;
+  });
+});
+
+// ------------------------------
 document.addEventListener('DOMContentLoaded', () => {
   const paragraphs = document.querySelectorAll('.flow-container p');
 

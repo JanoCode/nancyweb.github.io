@@ -107,48 +107,13 @@ h1 {
 }
 
 /* Panda */
-.sleep {
+.panda {
     display: inline-block;
-    width: 10vmin;
-    height: 10vmin;
+    width: 15vmin;
+    height: 15vmin;
     margin-left: 1vmin;
-    background: url(https://media1.tenor.com/images/0546caeb51e42b4227d0f91a8b6d3e4f/tenor.gif?itemid=11572819) no-repeat center center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     vertical-align: middle;
-}
-
-@keyframes try{
-    0%{
-        content: "s";
-    }
-    5%{
-        content: "sl";
-    }
-    10%{
-        content: "sle";
-    }
-    15%{
-        content: "slee";
-    }
-    20%{
-        content: "sleep";
-    }
-    25%{
-        content: "sleepi";
-    }
-    30%{
-        content: "sleepin";
-    }
-    35%{
-        content: "sleeping";
-    }
-    45%{
-        content: "sleeping.";
-    }
-    60%{
-        content: "sleeping...";
-    }
-    100%{
-        content: "sleeping......";
-    }
+    cursor: pointer;
 }
