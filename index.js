@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       msg.style.transform = 'translateY(-100%)';
       msg.style.opacity = '0';
       setTimeout(() => msg.remove(), 500);
-    }, 4000);
+    }, 1000);
 
     // ===== Lógica del panda =====
     const panda = document.querySelector('.panda');
