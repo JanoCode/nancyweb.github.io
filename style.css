@@ -143,7 +143,7 @@ h1 {
 
 .corner-btn {
   position: fixed;
-  top: 12px;
+  top: 60px;
   left: 12px;
   z-index: 9999;
   background: linear-gradient(180deg, #ffffff, #dbe9ff);
@@ -169,6 +169,43 @@ h1 {
 /* Responsive en pantallas pequeñas */
 @media (max-width: 420px) {
   .corner-btn {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+    top: 8px;
+    left: 8px;
+  }
+}
+
+/*second btn*/
+
+.second-btn {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 9999;
+  background: linear-gradient(180deg, #ffffff, #dbe9ff);
+  border: 2px solid rgba(10,61,145,0.12);
+  color: #0a3d91;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(10,61,145,0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover */
+.second-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(10,61,145,0.18);
+}
+
+/* Responsive en pantallas pequeñas */
+@media (max-width: 420px) {
+  .second-btn {
     padding: 6px 8px;
     font-size: 0.9rem;
     top: 8px;
