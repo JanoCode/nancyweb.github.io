@@ -1,18 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== Mostrar mensaje al entrar =====
-    const msg = document.createElement('div');
-    msg.className = 'panda-message';
-    msg.textContent = 'Mi chanchi... presiona el panda🐼';
-    document.body.appendChild(msg);
-
-    // Ocultar mensaje después de 4 segundos
-    setTimeout(() => {
-      msg.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-      msg.style.transform = 'translateY(-100%)';
-      msg.style.opacity = '0';
-      setTimeout(() => msg.remove(), 500);
-    }, 1000);
-
     // ===== Lógica del panda =====
     const panda = document.querySelector('.panda');
 

@@ -1,38 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panda motivacional</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    body {
+      background: url('./img/background4.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Burbuja de texto estilo pastel */
     .burbuja-texto {
       position: relative;
-      background: white;
-      border-radius: 0.75rem;
-      padding: 0.75rem 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      max-width: 220px;
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 1rem;
+      padding: 0.9rem 1.2rem;
+      box-shadow: 2px 3px 10px rgba(10, 61, 145, 0.25);
+      max-width: 260px;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       text-align: center;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
+
     .burbuja-texto::after {
       content: "";
       position: absolute;
-      bottom: -10px;
-      left: 30px;
-      border-width: 10px 10px 0;
+      bottom: -12px;
+      left: 40px;
+      border-width: 12px 12px 0;
       border-style: solid;
-      border-color: white transparent transparent transparent;
+      border-color: rgba(255, 255, 255, 0.75) transparent transparent transparent;
+    }
+
+    /* Panda */
+    #panda {
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.25));
+    }
+
+    #panda:hover {
+      transform: scale(1.08);
+      transition: transform 0.3s ease;
     }
   </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-blue-200">
+<body class="flex items-center justify-center min-h-screen">
 
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center gap-6">
     <!-- burbuja de texto -->
-    <div id="burbuja" class="burbuja-texto mb-4">
+    <div id="burbuja" class="burbuja-texto">
       Presioname.. digo.. me gusta el bamboo 🐼
     </div>
 
@@ -41,7 +60,7 @@
       id="panda" 
       src="./img/motivationalPanda.png" 
       alt="recarga la pagina, no se por que no carga el panda xd"
-      class="w-48 h-48 cursor-pointer transition-transform hover:scale-110"
+      class="w-48 h-48 cursor-pointer"
     >
   </div>
 
@@ -52,9 +71,9 @@
       "Me gusta tu culo! 🥵🩵",
       "Siempre estaré contigo.. tampoco importa cuando leas esto! 💕",
       "Secate el pelo 😤",
-      "mandame foto de tu carita.. tampoco importa cuando veas esto 👀",
-      "tu jano te manda mucho animo para tu día, dice que te ama mucho y que siempre estará a tu lado",
-      "eres una cosita preciosa ❤️"
+      "Mándame foto de tu carita.. tampoco importa cuando veas esto 👀",
+      "Tu Jano te manda mucho ánimo para tu día, dice que te ama mucho y que siempre estará a tu lado",
+      "Eres una cosita preciosa ❤️"
     ];
 
     let index = 0;
